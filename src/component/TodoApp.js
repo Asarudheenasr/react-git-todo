@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./todoapp.css";
+
 
 export default class TodoApp extends Component {
   state = {
@@ -139,7 +139,7 @@ export default class TodoApp extends Component {
     return (
       <div className="todo-container">
         <form className="input-form" onSubmit={this.preventRefresh}>
-          <h1> Todo App </h1> <p> {message} </p>{" "}
+          <h1> Todo App </h1> <p> {message} </p>
           <div className="input-section">
             <input
               type="text"
@@ -152,39 +152,39 @@ export default class TodoApp extends Component {
               onClick={this.storeItems}
               style={{ display: addDisp }}
             >
-              <i className="fas fa-plus"> </i>{" "}
-            </button>{" "}
+              <i className="fas fa-plus"> </i>
+            </button>
             <button
               type="button"
               onClick={this.updateItem}
               style={{ display: editDisp }}
             >
-              <i className="fas fa-check"> </i>{" "}
-            </button>{" "}
-          </div>{" "}
-        </form>{" "}
+              <i className="fas fa-check"> </i>
+            </button>
+          </div>
+        </form>
         <div className="todo-items">
           <ul>
-            {" "}
+            
             {items.map((data, index) => (
               <li key={index}>
                 <i
                   className="fas fa-check-square"
                   onClick={() => this.complete(index)}
-                ></i>{" "}
-                <span className={data.status}> {data.val} </span>{" "}
+                ></i>
+                <span className={data.status}> {data.val} </span>
                 <i
                   className="fas fa-pencil-alt"
                   onClick={() => this.editItem(index)}
-                ></i>{" "}
+                ></i>
                 <i
                   className="fas fa-trash-alt"
                   onClick={() => this.deleteItem(index)}
-                ></i>{" "}
+                ></i>
               </li>
-            ))}{" "}
-          </ul>{" "}
-        </div>{" "}
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
